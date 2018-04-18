@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A874723B-64DD-4C1A-A428-BA84F98488A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shine.DataProcessingLogic</RootNamespace>
+    <AssemblyName>Shine.DataProcessingLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Shine.Data.EF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dll\Shine.Data.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dll\System.Data.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\IDataItemContract.cs" />
+    <Compile Include="Contracts\IElectricityContract.cs" />
+    <Compile Include="Contracts\IGroupControlContract.cs" />
+    <Compile Include="Contracts\IHostContract.cs" />
+    <Compile Include="Contracts\IHostPolicyContract.cs" />
+    <Compile Include="Contracts\ILightPlanContract.cs" />
+    <Compile Include="Contracts\ILightPoleContract.cs" />
+    <Compile Include="Contracts\ILoggingContract.cs" />
+    <Compile Include="Contracts\IOrganizeContract.cs" />
+    <Compile Include="Contracts\ISubControlContract.cs" />
+    <Compile Include="Contracts\ISum_PowerContract.cs" />
+    <Compile Include="Contracts\IUpgradeContract.cs" />
+    <Compile Include="Contracts\IUserBlackListContract.cs" />
+    <Compile Include="Contracts\IUserLoginContract.cs" />
+    <Compile Include="Data\CreateDatabaseIfNotExistsWithSeed.cs" />
+    <Compile Include="Data\CreateDatabaseSeedAction.cs" />
+    <Compile Include="Data\ShineDbContext.cs" />
+    <Compile Include="Data\ShineDbContextInitializer.cs" />
+    <Compile Include="Dtos\HostManager\In\HostInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\HostLogin_0x44_In.cs" />
+    <Compile Include="Dtos\HostManager\In\HostParameter_0x25_In.cs" />
+    <Compile Include="Dtos\HostManager\In\HostPolicyInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\HostRealTimeDataInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\HostPolicy_0x5B_In.cs" />
+    <Compile Include="Dtos\HostManager\In\Host_0x61_In.cs" />
+    <Compile Include="Dtos\HostManager\In\LightPlanInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\LightPlan_0x54_In.cs" />
+    <Compile Include="Dtos\HostManager\In\LightPlan_0x59_In.cs" />
+    <Compile Include="Dtos\HostManager\In\LightPoleInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\SubControlInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\SubControl_0x29_In.cs" />
+    <Compile Include="Dtos\HostManager\In\SubRealTimeDataInputDto.cs" />
+    <Compile Include="Dtos\HostManager\In\SubRealTimeData_0x16_In.cs" />
+    <Compile Include="Dtos\HostManager\Out\EmailHostOffines.cs" />
+    <Compile Include="Dtos\HostManager\Out\EmailSubOffines.cs" />
+    <Compile Include="Dtos\OrganzieManager\In\DataItemDetailInputDto.cs" />
+    <Compile Include="Dtos\OrganzieManager\In\DataItemInputDto.cs" />
+    <Compile Include="Dtos\OrganzieManager\In\GroupControlInputDto.cs" />
+    <Compile Include="Dtos\OrganzieManager\In\GroupControl_0x18_In.cs" />
+    <Compile Include="Dtos\OrganzieManager\In\OrganizeIn.cs" />
+    <Compile Include="Dtos\OrganzieManager\In\OrganizeInputDto.cs" />
+    <Compile Include="Dtos\OrganzieManager\Out\DataItemDetailOutDto.cs" />
+    <Compile Include="Dtos\OrganzieManager\Out\OrganizeOutDto.cs" />
+    <Compile Include="Dtos\Sum_Power\Sum_Power_Day.cs" />
+    <Compile Include="Dtos\Sum_Power\Sum_Power_Hour.cs" />
+    <Compile Include="Dtos\Sum_Power\Sum_Power_Month.cs" />
+    <Compile Include="Dtos\UserManager\In\UserBlackListInputOutDto.cs" />
+    <Compile Include="Dtos\UserManager\In\UserInputDto.cs" />
+    <Compile Include="Dtos\UserManager\In\UserLoginInputDto.cs" />
+    <Compile Include="Dtos\UserManager\In\UserPageIn.cs" />
+    <Compile Include="Dtos\UserManager\Out\InformationOutDto.cs" />
+    <Compile Include="Dtos\UserManager\Out\UserBlackListOutDto.cs" />
+    <Compile Include="Dtos\UserManager\Out\UserLoginOutDto.cs" />
+    <Compile Include="Dtos\UserManager\Out\UserOrganizeMapOutDto.cs" />
+    <Compile Include="Dtos\UserManager\Out\UserOutDto.cs" />
+    <Compile Include="ModelConfigurations\FunctionConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\HostConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\HostLoginConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\HostParameterConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\HostPolicyConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\HostPolicyLogConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\LightPlanConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\LightPoleConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\SubControlConfiguration.cs" />
+    <Compile Include="ModelConfigurations\HostManager\SubRealTimeDataConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\AnnualElectricityConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\DayElectricityConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\GroupControlConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\MonthElectricityConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\SubAggregationConuration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\UpgradeLogConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\UpgradePackagesConfiguration.cs" />
+    <Compile Include="Models\HostManager\HostLogin.cs" />
+    <Compile Include="Models\HostManager\HostParameter.cs" />
+    <Compile Include="ModelConfigurations\HostManager\HostRealTimeDataConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\DataItemConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\DataItemDetailConfiguration.cs" />
+    <Compile Include="ModelConfigurations\OrganizeManager\OrganizeConfiguration.cs" />
+    <Compile Include="ModelConfigurations\UserManager\InformationConfiguration.cs" />
+    <Compile Include="ModelConfigurations\UserManager\UserBlackListConfiguration.cs" />
+    <Compile Include="ModelConfigurations\UserManager\UserConfiguration.cs" />
+    <Compile Include="ModelConfigurations\UserManager\UserLoginConfiguration.cs" />
+    <Compile Include="ModelConfigurations\UserManager\UserOrganizeMapConfiguration.cs" />
+    <Compile Include="Models\HostManager\Host.cs" />
+    <Compile Include="Models\HostManager\HostPolicy.cs" />
+    <Compile Include="Models\HostManager\HostPolicyLog.cs" />
+    <Compile Include="Models\HostManager\HostRealTimeData.cs" />
+    <Compile Include="Models\HostManager\LightPlan.cs" />
+    <Compile Include="Models\HostManager\LightPole.cs" />
+    <Compile Include="Models\HostManager\SubControl.cs" />
+    <Compile Include="Models\HostManager\SubRealTimeData.cs" />
+    <Compile Include="Models\OrganizeManager\AnnualElectricity.cs" />
+    <Compile Include="Models\OrganizeManager\DataItem.cs" />
+    <Compile Include="Models\OrganizeManager\DataItemDetail.cs" />
+    <Compile Include="Models\OrganizeManager\DayElectricity.cs" />
+    <Compile Include="Models\OrganizeManager\GroupControl.cs" />
+    <Compile Include="Models\OrganizeManager\MonthElectricity.cs" />
+    <Compile Include="Models\OrganizeManager\Organize.cs" />
+    <Compile Include="Models\OrganizeManager\SubAggregation.cs" />
+    <Compile Include="Models\OrganizeManager\UpgradeLog.cs" />
+    <Compile Include="Models\OrganizeManager\UpgradePackages.cs" />
+    <Compile Include="Models\UserManager\Information.cs" />
+    <Compile Include="Models\UserManager\User.cs" />
+    <Compile Include="Models\UserManager\UserBlackList.cs" />
+    <Compile Include="Models\UserManager\UserLogin.cs" />
+    <Compile Include="Models\UserManager\UserOrganizeMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DataItemService.cs" />
+    <Compile Include="Services\ElectricityService.cs" />
+    <Compile Include="Services\GroupControlService.cs" />
+    <Compile Include="Services\HostPolicyService.cs" />
+    <Compile Include="Services\HostService.cs" />
+    <Compile Include="Services\LightPlanService.cs" />
+    <Compile Include="Services\LightPoleService.cs" />
+    <Compile Include="Services\LoggingService.DataLog.cs" />
+    <Compile Include="Services\LoggingService.cs" />
+    <Compile Include="Services\OrganizeService.cs" />
+    <Compile Include="Services\SubControlService.cs" />
+    <Compile Include="Services\Sum_PowerService.cs" />
+    <Compile Include="Services\UpgradeService.cs" />
+    <Compile Include="Services\UserBlackListService.cs" />
+    <Compile Include="Services\UserLoginService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shine.Comman\Shine.Comman.csproj">
+      <Project>{0856da3b-5f55-40bb-be22-dac1b9ce802c}</Project>
+      <Name>Shine.Comman</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shine.DataProcessingLogic.Base\Shine.DataProcessingLogic.Base.csproj">
+      <Project>{31246c89-153c-47e4-b809-caf9ca7974cb}</Project>
+      <Name>Shine.DataProcessingLogic.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrganizeLog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_default.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

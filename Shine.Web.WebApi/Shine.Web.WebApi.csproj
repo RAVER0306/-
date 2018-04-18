@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3AA348E-AE89-43C1-8D4F-0A3741995914}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shine.Web.WebApi</RootNamespace>
+    <AssemblyName>Shine.Web.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dll\System.Data.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseApiController.cs" />
+    <Compile Include="Caching\CachingHandler.cs" />
+    <Compile Include="Caching\EntityTagKey.cs" />
+    <Compile Include="Caching\IEntityTagStore.cs" />
+    <Compile Include="Caching\InMemoryEntityTagStore.cs" />
+    <Compile Include="Caching\InMemoryThrottleStore.cs" />
+    <Compile Include="Caching\IThrottleStore.cs" />
+    <Compile Include="Caching\ThrottleEntry.cs" />
+    <Compile Include="Caching\TimedEntityTagHeaderValue.cs" />
+    <Compile Include="Content\CompressedContent.cs" />
+    <Compile Include="Content\CompressHandler.cs" />
+    <Compile Include="Extensions\ActionExtensions.cs" />
+    <Compile Include="Extensions\ContentNegotiationExtensions.cs" />
+    <Compile Include="Extensions\HttpConfigurationExtensions.cs" />
+    <Compile Include="Extensions\HttpMessageExtensions.cs" />
+    <Compile Include="Filters\EnableCorsAttribute.cs" />
+    <Compile Include="Filters\ExceptionHandlingAttribute.cs" />
+    <Compile Include="Filters\OnAuthorizeAttribute.cs" />
+    <Compile Include="Filters\OperateLogFilterAttribute.cs" />
+    <Compile Include="Filters\ValidationAttribute.cs" />
+    <Compile Include="Formattings\CSVMediaTypeFormatter.cs" />
+    <Compile Include="Formattings\PlainTextFormatter.cs" />
+    <Compile Include="Handlers\BasicAuthenticationHandlerBase.cs" />
+    <Compile Include="Handlers\CustomErrorMessageDelegatingHandler.cs" />
+    <Compile Include="Handlers\EncodingHandler.cs" />
+    <Compile Include="Handlers\ETagHandler.cs" />
+    <Compile Include="Handlers\HeadMessageHandler.cs" />
+    <Compile Include="Handlers\MethodOverrideHandler.cs" />
+    <Compile Include="Handlers\NotAcceptableMessageHandler.cs" />
+    <Compile Include="Handlers\RequestLifetimeScopeHandler.cs" />
+    <Compile Include="Handlers\RequestResponseTraceHandlerHandler.cs" />
+    <Compile Include="Handlers\RequireHttpsHandler.cs" />
+    <Compile Include="Handlers\SelfHostConsoleOutputHandler.cs" />
+    <Compile Include="Handlers\SimpleCorsHandler.cs" />
+    <Compile Include="Handlers\ThrottlingHandler.cs" />
+    <Compile Include="Handlers\TokenAuthenticationHandlerBase.cs" />
+    <Compile Include="Handlers\TraceMessageHandler.cs" />
+    <Compile Include="Handlers\UriFormatExtensionHandler.cs" />
+    <Compile Include="Initialize\AppBuilderExtensions.cs" />
+    <Compile Include="Initialize\WebApiActionMethodInfoFinder.cs" />
+    <Compile Include="Initialize\WebApiControllerTypeFinder.cs" />
+    <Compile Include="Initialize\WebApiFunctionHandler.cs" />
+    <Compile Include="Initialize\WebApiIocResolver.cs" />
+    <Compile Include="Internal\Constants.cs" />
+    <Compile Include="Internal\EnumerableExtensions.cs" />
+    <Compile Include="Internal\HttpHeaderNames.cs" />
+    <Compile Include="Internal\IsInExtensions.cs" />
+    <Compile Include="Internal\MediaTypeConstants.cs" />
+    <Compile Include="Internal\ReflectionHelper.cs" />
+    <Compile Include="Logging\ApiLoggingInfo.cs" />
+    <Compile Include="Logging\ILoggingRepository.cs" />
+    <Compile Include="Messages\ConflictResponse.cs" />
+    <Compile Include="Messages\CreateResponse.cs" />
+    <Compile Include="Messages\IApiResource.cs" />
+    <Compile Include="Messages\MovedPermanentlyResponse.cs" />
+    <Compile Include="Messages\NotModifiedResponse.cs" />
+    <Compile Include="Messages\OkResponse.cs" />
+    <Compile Include="Messages\RedirectResponse.cs" />
+    <Compile Include="Messages\ResourceIdentifierBase.cs" />
+    <Compile Include="Messages\ResourceLocation.cs" />
+    <Compile Include="Messages\ResourceResponseBase.cs" />
+    <Compile Include="Messages\TemporaryRedirectResponse.cs" />
+    <Compile Include="ModelBinders\MvcActionValueBinder.cs" />
+    <Compile Include="ModelBinders\MvcStyleBindingAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Routing\StartsWithConstraint.cs" />
+    <Compile Include="Security\ClientCryptoDelegatingHandler.cs" />
+    <Compile Include="Security\HostCryptoDelegatingHandler.cs" />
+    <Compile Include="Selectors\AreaHttpControllerSelector.cs" />
+    <Compile Include="Selectors\CorsActionSelector.cs" />
+    <Compile Include="Serialization\IHttpMessageSerializerAsync.cs" />
+    <Compile Include="Serialization\MessageContentHttpMessageSerializer.cs" />
+    <Compile Include="Serialization\TaskHelpers.cs" />
+    <Compile Include="Serialization\TaskHelpersExtensions.cs" />
+    <Compile Include="Tracing\TraceWriter.cs" />
+    <Compile Include="WebHttpHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shine.Comman\Shine.Comman.csproj">
+      <Project>{0856da3b-5f55-40bb-be22-dac1b9ce802c}</Project>
+      <Name>Shine.Comman</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
